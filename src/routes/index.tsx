@@ -30,7 +30,7 @@ function Home() {
         {trail && <ImageTrail containerRef={heroRef} images={trailImages} />}
         <div className="container-page relative z-10 py-14 md:py-20 pointer-events-none">
           <p className="text-lg font-semibold text-accent">Hi, I’m Archie Saluja.</p>
-          <h1 className="display-xl mt-6 max-w-[14ch]">
+          <h1 className="display-xl mt-6">
             Thoughtful interfaces.
             <br />
             <span className="text-muted-foreground">Expressive identities.</span>
