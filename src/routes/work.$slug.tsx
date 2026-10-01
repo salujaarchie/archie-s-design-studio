@@ -35,7 +35,7 @@ function ProjectPage() {
   const { slug } = Route.useLoaderData();
   const p = getProject(slug)!;
   const i = projects.indexOf(p);
-  const next = projects[(i + 1) % projects.length];
+  const next = projects[(i + 1) % projects.length]!;
   const related = p.related ? getProject(p.related) : undefined;
   const filled = p.sections.filter((s) => s.body || s.images?.length);
 

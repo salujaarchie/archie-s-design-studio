@@ -8,7 +8,7 @@ const DESC = "Branding, UI/UX and visual communication projects by Archie Saluja
 
 export const Route = createFileRoute("/work/")({
   validateSearch: (s: Record<string, unknown>): { category?: string } =>
-    typeof s.category === "string" ? { category: s.category } : {},
+    typeof s["category"] === "string" ? { category: s["category"] } : {},
   head: () => ({
     meta: [
       { title: TITLE },
