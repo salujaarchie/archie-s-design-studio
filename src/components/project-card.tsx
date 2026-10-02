@@ -22,11 +22,11 @@ export function ProjectCard({ project, eager = false }: { project: Project; eage
       <div className="mt-5 flex items-start justify-between gap-4 border-t pt-4">
         <div>
           <h3 className="text-xl font-bold tracking-tight md:text-2xl">{project.title}</h3>
-          <p className="label-sm mt-1">{project.category}</p>
+          <p className="label-sm mt-1"><span className="text-primary">{project.category}</span>{project.descriptor && <> · {project.descriptor}</>}</p>
         </div>
         <span
           aria-hidden="true"
-          className="mt-1 text-xl text-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1"
+          className="mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-foreground text-base transition-all group-hover:bg-highlight group-focus-visible:bg-highlight duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1"
         >
           ↗
         </span>

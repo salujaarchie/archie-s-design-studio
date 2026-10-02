@@ -28,7 +28,7 @@ export function SiteHeader() {
   }, [open]);
 
   const linkCls =
-    "inline-flex min-h-11 items-center px-3 text-[15px] font-semibold text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-accent";
+    "inline-flex min-h-11 items-center px-3 text-[15px] font-semibold text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-primary data-[status=active]:underline data-[status=active]:decoration-2 data-[status=active]:underline-offset-8";
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background">
@@ -68,7 +68,7 @@ export function SiteHeader() {
               <li key={n.to} className="border-b last:border-b-0">
                 <Link
                   to={n.to}
-                  className="flex min-h-14 items-center text-2xl font-bold tracking-tight data-[status=active]:text-accent"
+                  className="flex min-h-14 items-center text-2xl font-bold tracking-tight data-[status=active]:text-primary data-[status=active]:underline data-[status=active]:decoration-2 data-[status=active]:underline-offset-8"
                 >
                   {n.label}
                 </Link>
