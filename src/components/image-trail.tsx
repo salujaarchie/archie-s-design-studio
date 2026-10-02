@@ -37,7 +37,7 @@ export function ImageTrail({ containerRef, images }: { containerRef: RefObject<H
     const live: HTMLImageElement[] = [];
 
     const spawn = (x: number, y: number) => {
-      const data = images[idx++ % images.length];
+      const data = images[idx++ % images.length]!;
       const rect = host.getBoundingClientRect();
       const w = 180 + Math.random() * 60;
       const h = (w * data.height) / data.width;
