@@ -5,7 +5,7 @@ import { btn } from "@/components/ui-button";
 import { cn } from "@/lib/utils";
 
 const TITLE = "Contact — Archie Saluja";
-const DESC = "Get in touch with Archie Saluja about design opportunities, collaborations, and ideas.";
+const DESC = "Contact Archie Saluja by email or Behance for design opportunities and collaborations.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -26,9 +26,10 @@ function Contact() {
   const [status, setStatus] = useState("");
   const channels = [
     { label: "Email", value: profile.email, href: profile.email && `mailto:${profile.email}` },
+    { label: "Behance", value: "behance.net/archiesaluja", href: profile.behance },
     { label: "LinkedIn", value: profile.linkedin, href: profile.linkedin },
-    { label: "Behance", value: profile.behance, href: profile.behance },
-  ];
+    { label: "Location", value: profile.location, href: "" },
+  ].filter((c) => c.value);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,29 +46,30 @@ function Contact() {
     setStatus("Your message looks good, but it can’t be sent yet — the form isn’t connected to a delivery service.");
   };
 
-  const field = "mt-2 w-full border bg-background px-4 py-3 text-base outline-none focus:border-accent rounded-sm";
+  const field = "mt-2 w-full border bg-background px-4 py-3 text-base outline-none focus:border-primary rounded-sm";
 
   return (
     <div className="container-page section-y">
       <p className="label-sm">Contact</p>
-      <h1 className="display-xl mt-4 max-w-[14ch]">Let’s make something thoughtful.</h1>
+      <h1 className="display-xl mt-4 max-w-[14ch]">Got an idea? Let’s talk.</h1>
+      <p className="mt-6 max-w-[52ch] text-muted-foreground">For design opportunities, collaborations, or a good creative conversation.</p>
       <div className="mt-14 grid gap-12 md:grid-cols-12">
         <ul className="md:col-span-4">
           {channels.map((c) => (
             <li key={c.label} className="border-t py-5">
               <p className="label-sm">{c.label}</p>
-              {c.value ? (
-                <a href={c.href} className="link-accent mt-1 inline-flex min-h-11 items-center font-semibold">{c.value}</a>
+              {c.href ? (
+                <a href={c.href} {...(c.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})} className="mt-1 inline-flex min-h-11 items-center break-all font-bold text-primary underline decoration-2 underline-offset-4">{c.value}</a>
               ) : (
-                <p className="mt-1 text-muted-foreground italic">Coming soon</p>
+                <p className="mt-1 font-semibold">{c.value}</p>
               )}
             </li>
           ))}
         </ul>
         <form noValidate onSubmit={onSubmit} className="space-y-6 md:col-span-7 md:col-start-6">
           {!profile.contactFormEnabled && (
-            <p className="border-l-2 border-accent pl-4 text-[15px] text-muted-foreground">
-              This form isn’t connected yet, so messages can’t be delivered. You can still check your details — sending will be enabled soon.
+            <p className="border-l-4 border-highlight pl-4 text-[15px] text-muted-foreground">
+              This form isn’t connected to a delivery service yet, so messages can’t be sent from here. Please email me directly instead.
             </p>
           )}
           {(["name", "email"] as const).map((k) => (

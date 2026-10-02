@@ -43,7 +43,7 @@ function ProjectPage() {
     <article>
       <header className="container-page pt-10 md:pt-16">
         <Link to="/work" className="inline-flex min-h-11 items-center text-[15px] font-semibold text-muted-foreground hover:text-foreground">← Back to Work</Link>
-        <p className="label-sm mt-8 text-accent">{p.category}</p>
+        <p className="label-sm mt-8"><span className="text-primary">{p.category}</span>{p.descriptor && <> · {p.descriptor}</>}</p>
         <h1 className="display-xl mt-4 max-w-[16ch]">{p.title}</h1>
         {p.summary && <p className="mt-6 max-w-[60ch] text-muted-foreground">{p.summary}</p>}
       </header>

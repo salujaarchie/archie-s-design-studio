@@ -11,12 +11,7 @@ import sem1 from "@/assets/semiotics-1.webp.asset.json";
 import sem2 from "@/assets/semiotics-2.webp.asset.json";
 import semBoard from "@/assets/semiotics-board.webp.asset.json";
 
-export const CATEGORIES = [
-  "UI/UX Design",
-  "Branding",
-  "Visual Communication",
-  "Social Media",
-] as const;
+export const CATEGORIES = ["UI/UX", "Branding", "Social Media"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 export type ImageRef = { src: string; alt: string; width: number; height: number };
@@ -29,6 +24,8 @@ export type Project = {
   slug: string;
   title: string;
   category: Category;
+  /** Optional secondary descriptor shown next to the category. */
+  descriptor?: string;
   featured: boolean;
   summary: string | null;
   cover: ImageRef;
@@ -68,7 +65,7 @@ export const projects: Project[] = [
     id: "numa-web",
     slug: "numa-website",
     title: "Numa — Website Design",
-    category: "UI/UX Design",
+    category: "UI/UX",
     featured: true,
     summary: null,
     cover: crop(web0.url, "Numa website case study cover with a person meditating on a pier at sunrise"),
@@ -92,7 +89,8 @@ export const projects: Project[] = [
     id: "semiotics",
     slug: "semiotics",
     title: "Semiotics — Visual Exploration",
-    category: "Visual Communication",
+    category: "Branding",
+    descriptor: "Academic / Semiotics",
     featured: true,
     summary: null,
     cover: crop(sem0.url, "Warli Verse title page with serif lettering and Warli art references"),
@@ -112,5 +110,4 @@ export const projects: Project[] = [
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 export const featuredProjects = projects.filter((p) => p.featured);
-export const usedCategories = CATEGORIES.filter((c) => projects.some((p) => p.category === c));
 export const trailImages: ImageRef[] = projects.flatMap((p) => [p.cover, ...p.previews]);

@@ -76,6 +76,8 @@ export function ImageTrail({ containerRef, images }: { containerRef: RefObject<H
       pending = null;
       const now = performance.now();
       if (!last) { last = p; return; }
+      const w = host.clientWidth;
+      if (w >= 900 && p.x < w * 0.52) { last = p; return; }
       if (Math.hypot(p.x - last.x, p.y - last.y) >= STEP && now - lastTime >= MIN_INTERVAL) {
         spawn(p.x, p.y);
         last = p;

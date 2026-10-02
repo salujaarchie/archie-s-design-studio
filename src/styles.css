@@ -29,30 +29,34 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-surface: var(--surface);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
 }
 
 :root {
   --radius: 6px;
-  --background: oklch(0.966 0.007 88.6); /* #F6F4EF */
-  --foreground: oklch(0.249 0 0); /* #202020 */
-  --card: oklch(0.966 0.007 88.6);
-  --card-foreground: oklch(0.249 0 0);
-  --popover: oklch(0.966 0.007 88.6);
-  --popover-foreground: oklch(0.249 0 0);
-  --primary: oklch(0.249 0 0);
-  --primary-foreground: oklch(0.966 0.007 88.6);
-  --secondary: oklch(0.925 0.008 91);
-  --secondary-foreground: oklch(0.249 0 0);
-  --muted: oklch(0.925 0.008 91);
-  --muted-foreground: oklch(0.48 0.008 106); /* #62625E */
-  --accent: oklch(0.392 0.104 6.6); /* #772D3E */
-  --accent-foreground: oklch(0.966 0.007 88.6);
+  --background: oklch(0.995 0.01 95); /* #FFFDF7 warm white */
+  --foreground: oklch(0.243 0.006 265); /* #202124 ink */
+  --card: oklch(0.995 0.01 95);
+  --card-foreground: oklch(0.243 0.006 265);
+  --popover: oklch(0.995 0.01 95);
+  --popover-foreground: oklch(0.243 0.006 265);
+  --primary: oklch(0.485 0.2 268); /* #2845D6 cobalt */
+  --primary-foreground: oklch(0.995 0.01 95);
+  --secondary: oklch(0.85 0.075 350); /* #F4BFD4 pink */
+  --secondary-foreground: oklch(0.243 0.006 265);
+  --muted: oklch(0.96 0.01 95);
+  --muted-foreground: oklch(0.44 0.008 265); /* ~#55565B, 7:1 on warm white */
+  --accent: oklch(0.485 0.2 268);
+  --accent-foreground: oklch(0.995 0.01 95);
+  --highlight: oklch(0.92 0.13 115); /* #E4EE85 citron */
+  --highlight-foreground: oklch(0.243 0.006 265);
   --destructive: oklch(0.5 0.17 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.889 0.009 91.5); /* #DEDCD5 */
-  --input: oklch(0.889 0.009 91.5);
-  --ring: oklch(0.392 0.104 6.6);
-  --surface: oklch(0.935 0.009 88);
+  --border: oklch(0.9 0.008 95);
+  --input: oklch(0.86 0.008 95);
+  --ring: oklch(0.485 0.2 268);
+  --surface: oklch(0.965 0.012 95);
 }
 
 @layer base {
@@ -92,13 +96,13 @@
   color: var(--color-muted-foreground);
 }
 @utility display-xl {
-  font-size: clamp(2.6rem, 7.2vw, 6.25rem);
+  font-size: clamp(2.5rem, 6.4vw, 7rem);
   font-weight: 800;
   line-height: 0.98;
   letter-spacing: -0.045em;
 }
 @utility display-lg {
-  font-size: clamp(2rem, 4.6vw, 3.75rem);
+  font-size: clamp(1.75rem, 3.6vw, 3.25rem);
   font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.035em;
@@ -114,4 +118,12 @@
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
+}
+
+@utility offset-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--color-highlight);
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.12em;
+  text-decoration-skip-ink: none;
 }
