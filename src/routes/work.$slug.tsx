@@ -27,7 +27,7 @@ export const Route = createFileRoute("/work/$slug")({
       <Link to="/work" className="link-accent mt-6 inline-flex min-h-11 items-center">← Back to Work</Link>
     </div>
   ),
-  errorComponent: ({ error }) => <div className="container-page section-y" role="alert">{error.message}</div>,
+  errorComponent: ({ error }) => <div className="container-page section-y" role="alert">{String((error as Error)?.message ?? error)}</div>,
   component: ProjectPage,
 });
 
