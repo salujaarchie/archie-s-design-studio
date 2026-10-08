@@ -84,12 +84,12 @@ function ProjectPage() {
           {related ? (
             <Link to="/work/$slug" params={{ slug: related.slug }} className="group block">
               <p className="label-sm">Companion case study</p>
-              <p className="display-md mt-2 group-hover:text-accent">{related.title}</p>
+              <p className="display-md mt-2 group-hover:text-primary">{related.title}</p>
             </Link>
           ) : <span />}
           <Link to="/work/$slug" params={{ slug: next.slug }} className="group block md:text-right">
             <p className="label-sm">Next project</p>
-            <p className="display-md mt-2 group-hover:text-accent">{next.title} →</p>
+            <p className="display-md mt-2 group-hover:text-primary">{next.title} →</p>
           </Link>
         </div>
       </nav>
