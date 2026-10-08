@@ -6,10 +6,10 @@ import web0 from "@/assets/numa-web-0.webp.asset.json";
 import web1 from "@/assets/numa-web-1.webp.asset.json";
 import web2 from "@/assets/numa-web-2.webp.asset.json";
 import webBoard from "@/assets/numa-web-board.webp.asset.json";
-import sem0 from "@/assets/semiotics-0.webp.asset.json";
-import sem1 from "@/assets/semiotics-1.webp.asset.json";
-import sem2 from "@/assets/semiotics-2.webp.asset.json";
-import semBoard from "@/assets/semiotics-board.webp.asset.json";
+import sem0 from "@/assets/semiotics-hd-0.webp.asset.json";
+import sem1 from "@/assets/semiotics-hd-1.webp.asset.json";
+import sem2 from "@/assets/semiotics-hd-2.webp.asset.json";
+import semBoard from "@/assets/semiotics-board-hd.webp.asset.json";
 
 export const CATEGORIES = ["UI/UX", "Branding", "Social Media"] as const;
 export type Category = (typeof CATEGORIES)[number];
@@ -98,7 +98,7 @@ export const projects: Project[] = [
       crop(sem1.url, "Warli-inspired letterforms drawn on a grid"),
       crop(sem2.url, "Warli Verse typeface applied to an art museum poster"),
     ],
-    boards: [{ src: semBoard.url, alt: "Full Warli Verse presentation: inspiration, typeface references, letter exploration and deliverables", width: 218, height: 1920 }],
+    boards: [{ src: semBoard.url, alt: "Full Warli Verse presentation: inspiration, typeface references, letter exploration and deliverables", width: 1200, height: 10590 }],
     sections: [
       { heading: "Brief", body: null },
       { heading: "Concept", body: null },
