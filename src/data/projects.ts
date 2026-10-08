@@ -1,15 +1,19 @@
-import brand0 from "@/assets/numa-brand-0.webp.asset.json";
-import brand1 from "@/assets/numa-brand-1.webp.asset.json";
-import brand2 from "@/assets/numa-brand-2.webp.asset.json";
-import brandBoard from "@/assets/numa-brand-board.webp.asset.json";
-import web0 from "@/assets/numa-web-0.webp.asset.json";
-import web1 from "@/assets/numa-web-1.webp.asset.json";
-import web2 from "@/assets/numa-web-2.webp.asset.json";
-import webBoard from "@/assets/numa-web-board.webp.asset.json";
+import brand0 from "@/assets/numa-brand-hd-0.webp.asset.json";
+import brand1 from "@/assets/numa-brand-hd-1.webp.asset.json";
+import brand2 from "@/assets/numa-brand-hd-2.webp.asset.json";
+import brandBoard from "@/assets/numa-brand-board-hd.webp.asset.json";
+import web0 from "@/assets/numa-web-hd-0.webp.asset.json";
+import web1 from "@/assets/numa-web-hd-1.webp.asset.json";
+import web2 from "@/assets/numa-web-hd-2.webp.asset.json";
+import webBoard from "@/assets/numa-web-board-hd.webp.asset.json";
 import sem0 from "@/assets/semiotics-hd-0.webp.asset.json";
 import sem1 from "@/assets/semiotics-hd-1.webp.asset.json";
 import sem2 from "@/assets/semiotics-hd-2.webp.asset.json";
 import semBoard from "@/assets/semiotics-board-hd.webp.asset.json";
+import keo0 from "@/assets/keora-hd-0.webp.asset.json";
+import keo1 from "@/assets/keora-hd-1.webp.asset.json";
+import keo2 from "@/assets/keora-hd-2.webp.asset.json";
+import keoBoard from "@/assets/keora-board-hd.webp.asset.json";
 
 export const CATEGORIES = ["UI/UX", "Branding", "Social Media"] as const;
 export type Category = (typeof CATEGORIES)[number];
@@ -52,7 +56,7 @@ export const projects: Project[] = [
       crop(brand1.url, "Numa branded notebook with blue dot pattern"),
       crop(brand2.url, "Numa packaging boxes in blue and pink"),
     ],
-    boards: [{ src: brandBoard.url, alt: "Full Numa brand identity presentation: logo, colours, stationery, packaging and business cards", width: 230, height: 1920 }],
+    boards: [{ src: brandBoard.url, alt: "Full Numa brand identity presentation: logo, colours, stationery, packaging and business cards", width: 1201, height: 10009 }],
     sections: [
       { heading: "Brief", body: null },
       { heading: "Concept", body: null },
@@ -73,7 +77,7 @@ export const projects: Project[] = [
       crop(web1.url, "Numa research and card-sorting boards"),
       crop(web2.url, "Numa website shown on a laptop"),
     ],
-    boards: [{ src: webBoard.url, alt: "Full Numa website case study: research, card sorting, wireframes and final screens", width: 211, height: 1920 }],
+    boards: [{ src: webBoard.url, alt: "Full Numa website case study: research, card sorting, wireframes and final screens", width: 1201, height: 10918 }],
     sections: [
       { heading: "Problem", body: null },
       { heading: "Role", body: null },
@@ -103,6 +107,26 @@ export const projects: Project[] = [
       { heading: "Brief", body: null },
       { heading: "Concept", body: null },
       { heading: "Interpretation of signs and symbols", body: null },
+      { heading: "Final outcome", body: null },
+    ],
+  },
+  {
+    id: "keora",
+    slug: "keora-magazine",
+    title: "Keora — Magazine Design",
+    category: "Branding",
+    descriptor: "Editorial / Magazine",
+    featured: false,
+    summary: null,
+    cover: crop(keo0.url, "Keora magazine theme board: Korean Wave, Hallyu, with editorial references"),
+    previews: [
+      crop(keo1.url, "Keora typography system and magazine cover mockup"),
+      crop(keo2.url, "Keora magazine inner spreads with fashion features"),
+    ],
+    boards: [{ src: keoBoard.url, alt: "Full Keora magazine presentation: theme, references, layout explorations, fonts, cover and spreads", width: 1201, height: 7219 }],
+    sections: [
+      { heading: "Brief", body: null },
+      { heading: "Concept", body: null },
       { heading: "Final outcome", body: null },
     ],
   },
