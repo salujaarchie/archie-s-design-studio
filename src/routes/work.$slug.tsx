@@ -74,7 +74,7 @@ function ProjectPage() {
         </div>
         {p.boards.map((b) => (
           <div key={b.src} className="mt-8 bg-surface px-4 py-10">
-            <img src={b.src} alt={b.alt} width={b.width} height={b.height} loading="lazy" decoding="async" className="mx-auto h-auto w-full max-w-[640px]" />
+            <img src={b.src} alt={b.alt} width={b.width} height={b.height} loading="lazy" decoding="async" className="mx-auto h-auto w-full max-w-[1000px]" />
           </div>
         ))}
       </section>
