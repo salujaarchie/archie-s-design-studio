@@ -60,7 +60,7 @@ export const projects: Project[] = [
     category: "Branding",
     featured: true,
     summary: null,
-    cover: { src: thBrand.url, alt: "Numa wordmark in soft blue with the tagline Breathe, Reflect, Reset, beside a person meditating by a lake", width: 1400, height: 800 },
+    cover: { src: thBrand.url, alt: "Numa Calming Chamomile packaging box beside daisies, captioned Designed for mindful rituals", width: 1400, height: 800 },
     previews: [
       crop(brand1.url, "Numa branded notebook with blue dot pattern"),
       crop(brand2.url, "Numa packaging boxes in blue and pink"),
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     category: "UI/UX",
     featured: true,
     summary: null,
-    cover: { src: thWeb.url, alt: "Numa website case study cover with a person meditating on a pier at sunrise", width: 1397, height: 941 },
+    cover: { src: thWeb.url, alt: "Numa website homepage shown on a laptop: Breathe. Reflect. Reset.", width: 1397, height: 941 },
     previews: [
       crop(web1.url, "Numa research and card-sorting boards"),
       crop(web2.url, "Numa website shown on a laptop"),
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     descriptor: "Academic / Semiotics",
     featured: true,
     summary: null,
-    cover: { src: thSem.url, alt: "Warli Verse title page with serif lettering and Warli art references", width: 1393, height: 927 },
+    cover: { src: thSem.url, alt: "Warli Exhibition 2025 tickets set in the Warli-inspired typeface", width: 1393, height: 927 },
     previews: [
       crop(sem1.url, "Warli-inspired letterforms drawn on a grid"),
       crop(sem2.url, "Warli Verse typeface applied to an art museum poster"),
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     descriptor: "Editorial / Magazine",
     featured: false,
     summary: null,
-    cover: { src: thKeo.url, alt: "Keora magazine theme board: Korean Wave, Hallyu, with editorial references", width: 1398, height: 842 },
+    cover: { src: thKeo.url, alt: "Keora magazine cover featuring Park Hyung Sik", width: 1398, height: 842 },
     previews: [
       crop(keo1.url, "Keora typography system and magazine cover mockup"),
       crop(keo2.url, "Keora magazine inner spreads with fashion features"),
