@@ -1,3 +1,8 @@
+import thWeb from "@/assets/numa-web-thumb.webp.asset.json";
+import thKeo from "@/assets/keora-thumb.webp.asset.json";
+import thSem from "@/assets/semiotics-thumb.webp.asset.json";
+import thBrand from "@/assets/numa-brand-thumb.webp.asset.json";
+import thFro from "@/assets/frodoh-thumb.webp.asset.json";
 import brand0 from "@/assets/numa-brand-hd-0.webp.asset.json";
 import brand1 from "@/assets/numa-brand-hd-1.webp.asset.json";
 import brand2 from "@/assets/numa-brand-hd-2.webp.asset.json";
@@ -55,7 +60,7 @@ export const projects: Project[] = [
     category: "Branding",
     featured: true,
     summary: null,
-    cover: crop(brand0.url, "Numa wordmark in soft blue with the tagline Breathe, Reflect, Reset, beside a person meditating by a lake"),
+    cover: { src: thBrand.url, alt: "Numa wordmark in soft blue with the tagline Breathe, Reflect, Reset, beside a person meditating by a lake", width: 1400, height: 800 },
     previews: [
       crop(brand1.url, "Numa branded notebook with blue dot pattern"),
       crop(brand2.url, "Numa packaging boxes in blue and pink"),
@@ -76,7 +81,7 @@ export const projects: Project[] = [
     category: "UI/UX",
     featured: true,
     summary: null,
-    cover: crop(web0.url, "Numa website case study cover with a person meditating on a pier at sunrise"),
+    cover: { src: thWeb.url, alt: "Numa website case study cover with a person meditating on a pier at sunrise", width: 1397, height: 941 },
     previews: [
       crop(web1.url, "Numa research and card-sorting boards"),
       crop(web2.url, "Numa website shown on a laptop"),
@@ -101,7 +106,7 @@ export const projects: Project[] = [
     descriptor: "Academic / Semiotics",
     featured: true,
     summary: null,
-    cover: crop(sem0.url, "Warli Verse title page with serif lettering and Warli art references"),
+    cover: { src: thSem.url, alt: "Warli Verse title page with serif lettering and Warli art references", width: 1393, height: 927 },
     previews: [
       crop(sem1.url, "Warli-inspired letterforms drawn on a grid"),
       crop(sem2.url, "Warli Verse typeface applied to an art museum poster"),
@@ -121,7 +126,7 @@ export const projects: Project[] = [
     category: "UI/UX",
     featured: false,
     summary: null,
-    cover: crop(fro0.url, "Reimagining Frodoh: website redesign cover with the new homepage shown on a laptop"),
+    cover: { src: thFro.url, alt: "Reimagining Frodoh: website redesign cover with the new homepage shown on a laptop", width: 1672, height: 941 },
     previews: [
       crop(fro1.url, "Frodoh website redesign process board"),
       crop(fro2.url, "Frodoh redesigned website screens"),
@@ -142,7 +147,7 @@ export const projects: Project[] = [
     descriptor: "Editorial / Magazine",
     featured: false,
     summary: null,
-    cover: crop(keo0.url, "Keora magazine theme board: Korean Wave, Hallyu, with editorial references"),
+    cover: { src: thKeo.url, alt: "Keora magazine theme board: Korean Wave, Hallyu, with editorial references", width: 1398, height: 842 },
     previews: [
       crop(keo1.url, "Keora typography system and magazine cover mockup"),
       crop(keo2.url, "Keora magazine inner spreads with fashion features"),
@@ -158,4 +163,4 @@ export const projects: Project[] = [
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 export const featuredProjects = projects.filter((p) => p.featured);
-export const trailImages: ImageRef[] = projects.flatMap((p) => [p.cover, ...p.previews]);
+export const trailImages: ImageRef[] = projects.map((p) => p.cover);
