@@ -50,7 +50,7 @@ function ProjectPage() {
 
       <div className="container-page mt-12">
         <div className="bg-surface px-4 py-10 md:py-16">
-          <img src={p.cover.src} alt={p.cover.alt} width={p.cover.width} height={p.cover.height} className="mx-auto h-auto w-full max-w-[520px]" />
+          <img src={p.cover.src} alt={p.cover.alt} width={p.cover.width} height={p.cover.height} className="mx-auto h-auto w-full max-w-[1000px]" />
         </div>
       </div>
 

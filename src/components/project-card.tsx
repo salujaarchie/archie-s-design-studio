@@ -8,7 +8,7 @@ export function ProjectCard({ project, eager = false }: { project: Project; eage
       params={{ slug: project.slug }}
       className="group block focus-visible:outline-offset-8"
     >
-      <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+      <div className="relative aspect-[3/2] overflow-hidden bg-surface">
         <img
           src={project.cover.src}
           alt={project.cover.alt}
@@ -16,7 +16,7 @@ export function ProjectCard({ project, eager = false }: { project: Project; eage
           height={project.cover.height}
           loading={eager ? "eager" : "lazy"}
           decoding="async"
-          className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.025] group-focus-visible:scale-[1.025] motion-reduce:transition-none"
+          className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025] group-focus-visible:scale-[1.025] motion-reduce:transition-none"
         />
       </div>
       <div className="mt-5 flex items-start justify-between gap-4 border-t pt-4">
