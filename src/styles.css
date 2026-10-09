@@ -127,3 +127,24 @@
   text-underline-offset: 0.12em;
   text-decoration-skip-ink: none;
 }
+
+/* ---------- Motion & illustration ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-in { opacity: 1; transform: none; }
+.draw path, .draw circle, .draw rect { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.is-in .draw path, .is-in .draw circle, .is-in .draw rect, .draw.draw-now path { animation: draw-in 1.4s .2s cubic-bezier(.6,.1,.2,1) forwards; }
+@keyframes draw-in { to { stroke-dashoffset: 0; } }
+.marquee { animation: marquee 28s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.spin-slow { animation: spin 14s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.float-y { animation: float-y 5s ease-in-out infinite; }
+@keyframes float-y { 50% { transform: translateY(-10px) rotate(4deg); } }
+.word-rise { display: inline-block; opacity: 0; transform: translateY(0.4em); animation: word-rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes word-rise { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .draw path, .draw circle, .draw rect { stroke-dasharray: none; stroke-dashoffset: 0; animation: none !important; }
+  .marquee, .spin-slow, .float-y { animation: none; }
+  .word-rise { opacity: 1; transform: none; animation: none; }
+}
