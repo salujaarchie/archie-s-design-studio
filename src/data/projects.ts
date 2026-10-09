@@ -13,6 +13,10 @@ import semBoard from "@/assets/semiotics-board-hd.webp.asset.json";
 import keo0 from "@/assets/keora-hd-0.webp.asset.json";
 import keo1 from "@/assets/keora-hd-1.webp.asset.json";
 import keo2 from "@/assets/keora-hd-2.webp.asset.json";
+import fro0 from "@/assets/frodoh-hd-0.webp.asset.json";
+import fro1 from "@/assets/frodoh-hd-1.webp.asset.json";
+import fro2 from "@/assets/frodoh-hd-2.webp.asset.json";
+import froBoard from "@/assets/frodoh-board-hd.webp.asset.json";
 import keoBoard from "@/assets/keora-board-hd.webp.asset.json";
 
 export const CATEGORIES = ["UI/UX", "Branding", "Social Media"] as const;
@@ -108,6 +112,26 @@ export const projects: Project[] = [
       { heading: "Concept", body: null },
       { heading: "Interpretation of signs and symbols", body: null },
       { heading: "Final outcome", body: null },
+    ],
+  },
+  {
+    id: "frodoh",
+    slug: "frodoh-website-redesign",
+    title: "Frodoh — Website Redesign",
+    category: "UI/UX",
+    featured: false,
+    summary: null,
+    cover: crop(fro0.url, "Reimagining Frodoh: website redesign cover with the new homepage shown on a laptop"),
+    previews: [
+      crop(fro1.url, "Frodoh website redesign process board"),
+      crop(fro2.url, "Frodoh redesigned website screens"),
+    ],
+    boards: [{ src: froBoard.url, alt: "Full Frodoh website redesign case study: visual audit, competitive landscape, process and final screens", width: 1201, height: 10170 }],
+    sections: [
+      { heading: "Problem", body: null },
+      { heading: "Role", body: null },
+      { heading: "Research", body: null },
+      { heading: "Final screens", body: null },
     ],
   },
   {
