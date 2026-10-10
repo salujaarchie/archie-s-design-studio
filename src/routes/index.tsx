@@ -5,6 +5,7 @@ import { ImageTrail, useTrailEnabled } from "@/components/image-trail";
 import { ProjectCard } from "@/components/project-card";
 import { Asterisk, ButtonLink, btn } from "@/components/ui-button";
 import { ChapterArt, Doodle, Marquee, Reveal, Sticker } from "@/components/story";
+import portrait from "@/assets/archie-portrait.webp.asset.json";
 
 const CHAPTERS = [
   { n: "01", t: "Notice", d: "Every project starts with looking closely — at people, references, and the problem behind the brief." },
@@ -116,7 +117,7 @@ function Home() {
           </div>
           <ol className="space-y-6 md:col-span-7 md:col-start-6">
             {CHAPTERS.map((c, i) => (
-              <Reveal as="li" key={c.n} className={`flex gap-6 border p-6 md:p-8 ${i % 2 ? "bg-surface" : "bg-background"}`}>
+              <Reveal as="li" key={c.n} className={`chapter-card flex gap-6 border p-6 md:p-8 ${i % 2 ? "bg-surface" : "bg-background"}`}>
                 <div className="shrink-0 text-primary"><ChapterArt i={i} /></div>
                 <div>
                   <p className="text-sm font-extrabold text-primary">{c.n}</p>
@@ -129,22 +130,30 @@ function Home() {
         </div>
       </section>
 
-      <section id="about" className="section-y scroll-mt-[72px] bg-secondary text-secondary-foreground">
-        <Reveal className="container-page grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-5">
+      <section id="about" className="section-y relative scroll-mt-[72px] overflow-hidden bg-secondary text-secondary-foreground">
+        <Reveal className="container-page grid items-center gap-12 md:grid-cols-12">
+          <div className="relative mx-auto w-full max-w-[360px] md:col-span-4">
+            <div className="portrait-card relative">
+              <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rotate-3 bg-primary" />
+              <img src={portrait.url} alt="Portrait of Archie Saluja" width={900} height={1200} loading="lazy" className="relative aspect-[3/4] w-full border-4 border-background object-cover" />
+              <span className="wiggle absolute -left-4 top-6 rounded-full bg-highlight px-4 py-1.5 text-sm font-extrabold text-highlight-foreground shadow-sm">Hi! 👋</span>
+            </div>
+            <Sticker text="Curious · Creative · Archie · " className="absolute -bottom-10 -right-6 h-24 w-24" />
+          </div>
+          <div className="md:col-span-7 md:col-start-6">
             <p className="label-sm text-secondary-foreground">About</p>
             <h2 className="display-lg mt-4">A little about Archie.</h2>
-            <ul className="mt-8 flex flex-wrap gap-2">
+            <ul className="mt-6 flex flex-wrap gap-2">
               {["Curious thinker", "Visual storyteller", "Team person"].map((t) => (
-                <li key={t} className="rounded-full border border-foreground px-4 py-1.5 text-sm font-semibold">{t}</li>
+                <li key={t} className="pill-pop cursor-default rounded-full border border-foreground px-4 py-1.5 text-sm font-semibold">{t}</li>
               ))}
             </ul>
-          </div>
-          <div className="space-y-6 md:col-span-6 md:col-start-7 md:pt-8">
-            <p>I like figuring out what makes something work—and what makes it feel memorable. At NIFT Panchkula, I’m studying Fashion Communication and exploring that space through interfaces, brand identities, and social media.</p>
-            <p>My experience spans website and campaign-tool design at Frodoh, social media strategy at North &amp; Beyond, and visual content at Ninos Dreams. Beyond design, I’ve organised cultural events and stepped on stage as an anchor—so collaboration, storytelling, and a little energy come naturally to me.</p>
-            <Link to="/resume" className="inline-flex min-h-11 items-center font-bold underline decoration-2 underline-offset-8">View my resume →</Link>
-            <Doodle kind="squiggle" className="w-36 text-foreground" />
+            <div className="mt-8 space-y-6">
+              <p>I like figuring out what makes something work—and what makes it feel memorable. At NIFT Panchkula, I’m studying Fashion Communication and exploring that space through interfaces, brand identities, and social media.</p>
+              <p>My experience spans website and campaign-tool design at Frodoh, social media strategy at North &amp; Beyond, and visual content at Ninos Dreams. Beyond design, I’ve organised cultural events and stepped on stage as an anchor—so collaboration, storytelling, and a little energy come naturally to me.</p>
+              <Link to="/resume" className="inline-flex min-h-11 items-center font-bold underline decoration-2 underline-offset-8">View my resume →</Link>
+              <Doodle kind="squiggle" className="w-36 text-foreground" />
+            </div>
           </div>
         </Reveal>
       </section>

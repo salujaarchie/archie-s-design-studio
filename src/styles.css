@@ -142,9 +142,23 @@
 @keyframes float-y { 50% { transform: translateY(-10px) rotate(4deg); } }
 .word-rise { display: inline-block; opacity: 0; transform: translateY(0.4em); animation: word-rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
 @keyframes word-rise { to { opacity: 1; transform: none; } }
+.portrait-card { transition: transform .5s cubic-bezier(.2,.7,.2,1); transform: rotate(-3deg); }
+.portrait-card:hover { transform: rotate(2deg) scale(1.03); }
+.wiggle { animation: wiggle 2.4s ease-in-out infinite; transform-origin: left center; }
+@keyframes wiggle { 0%,60%,100% { transform: rotate(-6deg); } 70% { transform: rotate(8deg); } 80% { transform: rotate(-10deg); } 90% { transform: rotate(6deg); } }
+.pill-pop { transition: transform .25s cubic-bezier(.3,1.6,.5,1), background-color .2s; }
+.pill-pop:hover { transform: translateY(-4px) rotate(-3deg); background: var(--color-highlight); }
+.chapter-card { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s, opacity .8s; }
+.chapter-card.is-in:hover { transform: translate(-6px,-6px) rotate(-.6deg); box-shadow: 6px 6px 0 var(--color-primary); }
+.chapter-card:hover svg { animation: float-y 1.6s ease-in-out infinite; }
+.marquee:hover { animation-play-state: paused; }
+a[class*="bg-primary"], a[class*="bg-background"] { transition: transform .25s cubic-bezier(.3,1.6,.5,1), background-color .2s; }
+a[class*="bg-primary"]:hover, a[class*="bg-background"]:hover { transform: translateY(-3px) rotate(-1.5deg); }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .draw path, .draw circle, .draw rect { stroke-dasharray: none; stroke-dashoffset: 0; animation: none !important; }
-  .marquee, .spin-slow, .float-y { animation: none; }
+  .marquee, .spin-slow, .float-y, .wiggle { animation: none; }
   .word-rise { opacity: 1; transform: none; animation: none; }
+  .portrait-card, .portrait-card:hover, .pill-pop:hover, .chapter-card.is-in:hover, a:hover { transform: none !important; }
+  .chapter-card:hover svg { animation: none; }
 }
