@@ -2,7 +2,7 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /** Fades/slides children in once when scrolled into view. CSS handles reduced motion. */
-export function Reveal({ children, className, delay = 0, as: Tag = "div" }: { children: ReactNode; className?: string; delay?: number; as?: "div" | "li" | "section" }) {
+export function Reveal({ children, className, delay = 0, as: Tag = "div" }: { children: ReactNode; className?: string | undefined; delay?: number; as?: "div" | "li" | "section" }) {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = ref.current;
