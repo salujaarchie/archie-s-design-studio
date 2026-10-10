@@ -96,7 +96,7 @@ function Home() {
           </div>
           <div className="mt-12 grid gap-x-10 gap-y-16 md:grid-cols-2">
             {featuredProjects.map((p, i) => (
-              <Reveal key={p.id} delay={(i % 2) * 120}>
+              <Reveal key={p.id} delay={(i % 2) * 120} className={i === featuredProjects.length - 1 && i % 2 === 0 ? "md:col-span-2 md:mx-auto md:w-[70%]" : undefined}>
                 <p className="mb-3 text-sm font-extrabold text-primary">Chapter {String(i + 1).padStart(2, "0")}</p>
                 <ProjectCard project={p} />
               </Reveal>
