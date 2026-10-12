@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Archie Saluja — Designer" },
+      { title: "Archie Saluja | Designer" },
       { name: "description", content: "Portfolio of Archie Saluja, design student at NIFT Panchkula." },
       { name: "author", content: "Archie Saluja" },
       { property: "og:type", content: "website" },

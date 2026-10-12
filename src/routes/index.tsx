@@ -8,9 +8,9 @@ import { ChapterArt, Doodle, Marquee, Reveal, Sticker } from "@/components/story
 import portrait from "@/assets/archie-portrait.webp.asset.json";
 
 const CHAPTERS = [
-  { n: "01", t: "Notice", d: "Every project starts with looking closely — at people, references, and the problem behind the brief." },
+  { n: "01", t: "Notice", d: "Every project starts with looking closely: at people, references, and the problem behind the brief." },
   { n: "02", t: "Sketch", d: "Ideas get messy on paper first: rough layouts, letterforms, and flows before anything is polished." },
-  { n: "03", t: "Shape", d: "The strongest direction becomes a system — type, colour, grids, and screens that work together." },
+  { n: "03", t: "Shape", d: "The strongest direction becomes a system of type, colour, grids, and screens that work together." },
   { n: "04", t: "Share", d: "Finally it goes out into the world, as a website, a brand, or a feed, and tells its story." },
 ];
 
@@ -18,7 +18,7 @@ const Words = ({ text, start = 0 }: { text: string; start?: number }) => (
   <>{text.split(" ").map((w, i) => <span key={i} className="word-rise" style={{ animationDelay: `${start + i * 90}ms` }}>{w}&nbsp;</span>)}</>
 );
 
-const TITLE = "Archie Saluja — UI/UX, Branding & Social Media";
+const TITLE = "Archie Saluja | UI/UX, Branding & Social Media";
 const DESC = "Archie Saluja is a Fashion Communication student at NIFT Panchkula designing digital experiences, brand identities, and social content.";
 
 export const Route = createFileRoute("/")({
@@ -90,7 +90,7 @@ function Home() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="label-sm">Selected work</p>
-              <h2 className="display-lg mt-3">A few things I’ve made.</h2>
+              <h2 className="display-lg mt-3">A few things I’ve <span className="mark now">made.</span></h2>
               <p className="mt-3 max-w-[48ch] text-muted-foreground">Across screens, brands, and social feeds.</p>
             </div>
             <Link to="/work" className="inline-flex min-h-11 items-center font-bold text-primary underline decoration-2 underline-offset-8 hover:decoration-highlight">View all work →</Link>
@@ -111,7 +111,7 @@ function Home() {
           <div className="md:col-span-4">
             <div className="md:sticky md:top-28">
               <p className="label-sm">The process</p>
-              <h2 id="story-h" className="display-lg mt-3">How an idea becomes a project.</h2>
+              <h2 id="story-h" className="display-lg mt-3">How an idea becomes a <span className="mark now">project.</span></h2>
               <Doodle kind="loop" className="draw-now mt-6 w-40 text-primary" />
             </div>
           </div>
@@ -142,15 +142,15 @@ function Home() {
           </div>
           <div className="md:col-span-7 md:col-start-6">
             <p className="label-sm text-secondary-foreground">About</p>
-            <h2 className="display-lg mt-4">A little about Archie.</h2>
+            <h2 className="display-lg mt-4">A little about <span className="mark">Archie.</span></h2>
             <ul className="mt-6 flex flex-wrap gap-2">
               {["Curious thinker", "Visual storyteller", "Team person"].map((t) => (
                 <li key={t} className="pill-pop cursor-default rounded-full border border-foreground px-4 py-1.5 text-sm font-semibold">{t}</li>
               ))}
             </ul>
             <div className="mt-8 space-y-6">
-              <p>I like figuring out what makes something work—and what makes it feel memorable. At NIFT Panchkula, I’m studying Fashion Communication and exploring that space through interfaces, brand identities, and social media.</p>
-              <p>My experience spans website and campaign-tool design at Frodoh, social media strategy at North &amp; Beyond, and visual content at Ninos Dreams. Beyond design, I’ve organised cultural events and stepped on stage as an anchor—so collaboration, storytelling, and a little energy come naturally to me.</p>
+              <p>I like figuring out what makes something work, and what makes it feel memorable. At NIFT Panchkula, I’m studying Fashion Communication and exploring that space through interfaces, brand identities, and social media.</p>
+              <p>My experience spans website and campaign-tool design at Frodoh, social media strategy at North &amp; Beyond, and visual content at Ninos Dreams. Beyond design, I’ve organised cultural events and stepped on stage as an anchor, so collaboration, storytelling, and a little energy come naturally to me.</p>
               <Link to="/resume" className="inline-flex min-h-11 items-center font-bold underline decoration-2 underline-offset-8">View my resume →</Link>
               <Doodle kind="squiggle" className="w-36 text-foreground" />
             </div>

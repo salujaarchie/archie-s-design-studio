@@ -162,3 +162,11 @@ a[class*="bg-primary"]:hover, a[class*="bg-background"]:hover { transform: trans
   .portrait-card, .portrait-card:hover, .pill-pop:hover, .chapter-card.is-in:hover, a:hover { transform: none !important; }
   .chapter-card:hover svg { animation: none; }
 }
+
+/* Heading flair */
+.display-xl, .display-lg { text-wrap: balance; }
+.display-lg { font-size: clamp(2.25rem, 4.6vw, 4.25rem); font-weight: 800; letter-spacing: -0.05em; line-height: 0.98; }
+.mark { position: relative; display: inline-block; z-index: 0; font-style: italic; }
+.mark::after { content: ""; position: absolute; left: -0.08em; right: -0.08em; bottom: 0.06em; height: 0.38em; background: var(--color-highlight); z-index: -1; border-radius: 0.2em; transform: rotate(-1.5deg) scaleX(0); transform-origin: left; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.is-in .mark::after, .mark.now::after { transform: rotate(-1.5deg) scaleX(1); }
+@media (prefers-reduced-motion: reduce) { .mark::after { transition: none; transform: rotate(-1.5deg); } }

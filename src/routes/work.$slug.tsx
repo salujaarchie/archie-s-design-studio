@@ -9,8 +9,8 @@ export const Route = createFileRoute("/work/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData && getProject(loaderData.slug);
-    if (!p) return { meta: [{ title: "Project not found — Archie Saluja" }, { name: "robots", content: "noindex" }] };
-    const t = `${p.title} — Archie Saluja`;
+    if (!p) return { meta: [{ title: "Project not found | Archie Saluja" }, { name: "robots", content: "noindex" }] };
+    const t = `${p.title} | Archie Saluja`;
     const d = `${p.title}, a ${p.category} project by Archie Saluja, NIFT Panchkula.`;
     return {
       meta: [
