@@ -10,7 +10,7 @@ import brandBoard from "@/assets/numa-brand-board-hd.webp.asset.json";
 import web0 from "@/assets/numa-web-hd-0.webp.asset.json";
 import web1 from "@/assets/numa-web-hd-1.webp.asset.json";
 import web2 from "@/assets/numa-web-hd-2.webp.asset.json";
-import webBoard from "@/assets/numa-web-board-hd.webp.asset.json";
+import webBoard from "@/assets/numa-web-board-hd2.webp.asset.json";
 import sem0 from "@/assets/semiotics-hd-0.webp.asset.json";
 import sem1 from "@/assets/semiotics-hd-1.webp.asset.json";
 import sem2 from "@/assets/semiotics-hd-2.webp.asset.json";
