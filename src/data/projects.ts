@@ -56,7 +56,7 @@ export const projects: Project[] = [
   {
     id: "numa-brand",
     slug: "numa-brand-identity",
-    title: "Numa — Brand Identity",
+    title: "Numa: Brand Identity",
     category: "Branding",
     featured: true,
     summary: null,
@@ -77,7 +77,7 @@ export const projects: Project[] = [
   {
     id: "numa-web",
     slug: "numa-website",
-    title: "Numa — Website Design",
+    title: "Numa: Website Design",
     category: "UI/UX",
     featured: true,
     summary: null,
@@ -101,7 +101,7 @@ export const projects: Project[] = [
   {
     id: "semiotics",
     slug: "semiotics",
-    title: "Semiotics — Visual Exploration",
+    title: "Semiotics: Visual Exploration",
     category: "Branding",
     descriptor: "Academic / Semiotics",
     featured: true,
@@ -122,7 +122,7 @@ export const projects: Project[] = [
   {
     id: "frodoh",
     slug: "frodoh-website-redesign",
-    title: "Frodoh — Website Redesign",
+    title: "Frodoh: Website Redesign",
     category: "UI/UX",
     featured: false,
     summary: null,
@@ -142,7 +142,7 @@ export const projects: Project[] = [
   {
     id: "keora",
     slug: "keora-magazine",
-    title: "Keora — Magazine Design",
+    title: "Keora: Magazine Design",
     category: "Branding",
     descriptor: "Editorial / Magazine",
     featured: false,

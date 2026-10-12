@@ -34,14 +34,14 @@ export function Marquee({ items }: { items: string[] }) {
       {items.map((t) => (
         <span key={t} className="flex items-center gap-8">
           <span>{t}</span>
-          <Star className="h-6 w-6 text-highlight" />
+          <Star className="h-4 w-4 text-highlight" />
         </span>
       ))}
     </span>
   );
   return (
-    <div aria-hidden="true" className="overflow-hidden bg-foreground py-5 text-background">
-      <div className="marquee flex w-max text-2xl font-extrabold tracking-tight md:text-4xl">
+    <div aria-hidden="true" className="overflow-hidden bg-foreground py-2.5 text-background">
+      <div className="marquee flex w-max text-base font-extrabold tracking-tight md:text-xl">
         {row}
         {row}
       </div>

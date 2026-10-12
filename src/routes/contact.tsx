@@ -4,7 +4,7 @@ import { profile } from "@/data/profile";
 import { btn } from "@/components/ui-button";
 import { cn } from "@/lib/utils";
 
-const TITLE = "Contact — Archie Saluja";
+const TITLE = "Contact | Archie Saluja";
 const DESC = "Contact Archie Saluja by email or Behance for design opportunities and collaborations.";
 
 export const Route = createFileRoute("/contact")({
@@ -43,7 +43,7 @@ function Contact() {
     if (message.length < 10) next.message = "Please write at least 10 characters.";
     setErrors(next);
     if (Object.keys(next).length) { setStatus("Please fix the highlighted fields."); return; }
-    setStatus("Your message looks good, but it can’t be sent yet — the form isn’t connected to a delivery service.");
+    setStatus("Your message looks good, but it can’t be sent yet | the form isn’t connected to a delivery service.");
   };
 
   const field = "mt-2 w-full border bg-background px-4 py-3 text-base outline-none focus:border-primary rounded-sm";

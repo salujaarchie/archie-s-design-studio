@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { profile } from "@/data/profile";
 import { btn } from "@/components/ui-button";
 
-const TITLE = "Resume — Archie Saluja";
+const TITLE = "Resume | Archie Saluja";
 const DESC = "Resume of Archie Saluja: B.Des Fashion Communication at NIFT Panchkula, with UI/UX, branding and social media experience.";
 
 export const Route = createFileRoute("/resume")({
@@ -64,7 +64,7 @@ function Resume() {
           <ol>
             {EXPERIENCE.map((e) => (
               <li key={e.org} className="grid gap-1 border-b py-6 first:pt-0 last:border-b-0 last:pb-0 md:grid-cols-[1fr_auto] md:gap-x-8">
-                <h3 className="text-lg font-bold">{e.role} <span className="font-semibold text-primary">— {e.org}</span></h3>
+                <h3 className="text-lg font-bold">{e.role} <span className="font-semibold text-primary">· {e.org}</span></h3>
                 <p className="label-sm md:row-span-2 md:pt-1 md:text-right">{e.date}</p>
                 <p className="max-w-[62ch] text-muted-foreground">{e.text}</p>
               </li>

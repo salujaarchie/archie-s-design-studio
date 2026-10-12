@@ -3,7 +3,7 @@ import { projects, CATEGORIES } from "@/data/projects";
 import { ProjectCard } from "@/components/project-card";
 import { cn } from "@/lib/utils";
 
-const TITLE = "Work — Archie Saluja";
+const TITLE = "Work | Archie Saluja";
 const DESC = "UI/UX, branding and social media projects by Archie Saluja, NIFT Panchkula.";
 
 export const Route = createFileRoute("/work/")({
