@@ -90,7 +90,7 @@ function Home() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="label-sm">Selected work</p>
-              <h2 className="display-lg mt-3">A few things I’ve made.</h2>
+              <h2 className="display-lg mt-3">A few things I’ve <span className="mark now">made.</span></h2>
               <p className="mt-3 max-w-[48ch] text-muted-foreground">Across screens, brands, and social feeds.</p>
             </div>
             <Link to="/work" className="inline-flex min-h-11 items-center font-bold text-primary underline decoration-2 underline-offset-8 hover:decoration-highlight">View all work →</Link>
@@ -111,7 +111,7 @@ function Home() {
           <div className="md:col-span-4">
             <div className="md:sticky md:top-28">
               <p className="label-sm">The process</p>
-              <h2 id="story-h" className="display-lg mt-3">How an idea becomes a project.</h2>
+              <h2 id="story-h" className="display-lg mt-3">How an idea becomes a <span className="mark now">project.</span></h2>
               <Doodle kind="loop" className="draw-now mt-6 w-40 text-primary" />
             </div>
           </div>
@@ -142,7 +142,7 @@ function Home() {
           </div>
           <div className="md:col-span-7 md:col-start-6">
             <p className="label-sm text-secondary-foreground">About</p>
-            <h2 className="display-lg mt-4">A little about Archie.</h2>
+            <h2 className="display-lg mt-4">A little about <span className="mark">Archie.</span></h2>
             <ul className="mt-6 flex flex-wrap gap-2">
               {["Curious thinker", "Visual storyteller", "Team person"].map((t) => (
                 <li key={t} className="pill-pop cursor-default rounded-full border border-foreground px-4 py-1.5 text-sm font-semibold">{t}</li>
