@@ -35,28 +35,28 @@
 
 :root {
   --radius: 6px;
-  --background: oklch(0.995 0.01 95); /* #FFFDF7 warm white */
-  --foreground: oklch(0.243 0.006 265); /* #202124 ink */
-  --card: oklch(0.995 0.01 95);
-  --card-foreground: oklch(0.243 0.006 265);
-  --popover: oklch(0.995 0.01 95);
-  --popover-foreground: oklch(0.243 0.006 265);
-  --primary: oklch(0.485 0.2 268); /* #2845D6 cobalt */
-  --primary-foreground: oklch(0.995 0.01 95);
-  --secondary: oklch(0.85 0.075 350); /* #F4BFD4 pink */
-  --secondary-foreground: oklch(0.243 0.006 265);
-  --muted: oklch(0.96 0.01 95);
+  --background: #FBF6EC; /* cream */
+  --foreground: #1C1B19; /* ink */
+  --card: #FBF6EC;
+  --card-foreground: #1C1B19;
+  --popover: #FBF6EC;
+  --popover-foreground: #1C1B19;
+  --primary: #C8381F; /* tomato */
+  --primary-foreground: #FBF6EC;
+  --secondary: #F7C9B4; /* peach */
+  --secondary-foreground: #1C1B19;
+  --muted: #F3EBDC;
   --muted-foreground: oklch(0.44 0.008 265); /* ~#55565B, 7:1 on warm white */
-  --accent: oklch(0.485 0.2 268);
-  --accent-foreground: oklch(0.995 0.01 95);
-  --highlight: oklch(0.92 0.13 115); /* #E4EE85 citron */
-  --highlight-foreground: oklch(0.243 0.006 265);
+  --accent: #C8381F;
+  --accent-foreground: #FBF6EC;
+  --highlight: #F6D365; /* butter */
+  --highlight-foreground: #1C1B19;
   --destructive: oklch(0.5 0.17 27);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0.008 95);
   --input: oklch(0.86 0.008 95);
-  --ring: oklch(0.485 0.2 268);
-  --surface: oklch(0.965 0.012 95);
+  --ring: #C8381F;
+  --surface: #F3EBDC;
 }
 
 @layer base {
