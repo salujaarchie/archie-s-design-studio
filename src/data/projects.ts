@@ -86,7 +86,7 @@ export const projects: Project[] = [
       crop(web1.url, "Numa research and card-sorting boards"),
       crop(web2.url, "Numa website shown on a laptop"),
     ],
-    boards: [{ src: webBoard.url, alt: "Full Numa website case study: research, card sorting, wireframes and final screens", width: 1201, height: 10918 }],
+    boards: [{ src: webBoard.url, alt: "Full Numa website case study: research, card sorting, wireframes and final screens", width: 1201, height: 10914 }],
     sections: [
       { heading: "Problem", body: null },
       { heading: "Role", body: null },
