@@ -28,6 +28,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: DESC },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -51,13 +53,13 @@ function Home() {
             <Asterisk className="text-primary" /> Hi, I’m Archie.
           </p>
           <h1 className="display-xl mt-6">
-            <Words text="Interfaces, identities" />
+            <Words text="Curiosity to clarity." />
             <br />
-            <span className="text-primary"><Words text="& a little" start={200} /><span className="word-rise offset-underline" style={{ animationDelay: "420ms" }}>personality.</span></span>
+            <span className="text-primary"><Words text="Ideas to" start={200} /><span className="word-rise offset-underline" style={{ animationDelay: "420ms" }}>identity.</span></span>
           </h1>
           <div className="mt-10 max-w-[56ch]">
             <p className="text-muted-foreground">
-              I’m Archie Saluja, a Fashion Communication student at NIFT Panchkula. I design digital experiences, build brand identities, and create social content with a clear idea behind it.
+              I’m Archie Saluja, a Communication student at NIFT Panchkula, working across UI/UX, branding, and social media. I turn research and ideas into intuitive digital experiences, distinctive identities, and content that gives brands a voice.
             </p>
             <p className="label-sm mt-6">UI/UX Design · Branding · Social Media</p>
             <div className="pointer-events-auto mt-8 flex flex-wrap gap-3">
@@ -159,7 +161,6 @@ function Home() {
       </section>
 
       <section className="section-y relative overflow-hidden bg-primary text-primary-foreground">
-        <Sticker text="Let's make something · " className="absolute -right-6 -top-6 hidden opacity-90 md:block" />
         <Reveal className="container-page">
           <h2 className="display-xl max-w-[14ch]">Got an idea? Let’s talk.</h2>
           <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -170,6 +171,7 @@ function Home() {
             </div>
           </div>
         </Reveal>
+        <Sticker text="Let's make something · " className="mx-auto mt-8 opacity-90 md:absolute md:right-8 md:top-8 md:mt-0" />
       </section>
     </>
   );
