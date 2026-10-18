@@ -144,7 +144,7 @@ function Home() {
           </div>
           <div className="md:col-span-7 md:col-start-6">
             <p className="label-sm text-secondary-foreground">About</p>
-            <h2 className="display-lg mt-4">A little about <span className="mark">Archie.</span></h2>
+            <h2 className="display-lg mt-4">Who is <span className="mark">Archie ?</span></h2>
             <ul className="mt-6 flex flex-wrap gap-2">
               {["Curious thinker", "Visual storyteller", "Team person"].map((t) => (
                 <li key={t} className="pill-pop cursor-default rounded-full border border-foreground px-4 py-1.5 text-sm font-semibold">{t}</li>
