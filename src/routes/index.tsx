@@ -97,11 +97,14 @@ function Home() {
             </div>
             <Link to="/work" className="inline-flex min-h-11 items-center font-bold text-primary underline decoration-2 underline-offset-8 hover:decoration-highlight">View all work →</Link>
           </div>
-          <div className="mt-12 grid gap-x-10 gap-y-16 md:grid-cols-2">
+          <div className="mt-12 grid items-start gap-x-12 gap-y-16 md:mt-16 md:grid-cols-12 md:gap-y-24">
             {featuredProjects.map((p, i) => (
-              <Reveal key={p.id} delay={(i % 2) * 120} className={i === featuredProjects.length - 1 && i % 2 === 0 ? "md:col-span-2 md:mx-auto md:w-[70%]" : undefined}>
-                <p className="mb-3 text-sm font-extrabold text-primary">Chapter {String(i + 1).padStart(2, "0")}</p>
-                <ProjectCard project={p} />
+              <Reveal key={p.id} delay={(i % 2) * 120} className={["md:col-span-7", "md:col-span-5 md:pt-28", "md:col-span-5", "md:col-span-7 md:pt-28"][i % 4]}>
+                <div className="mb-5 flex items-center justify-between border-t pt-3">
+                  <span className="text-2xl font-extrabold text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="label-sm">{p.category}</span>
+                </div>
+                <ProjectCard project={p} editorial />
               </Reveal>
             ))}
           </div>

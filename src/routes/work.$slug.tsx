@@ -18,6 +18,8 @@ export const Route = createFileRoute("/work/$slug")({
         { name: "description", content: d },
         { property: "og:title", content: t },
         { property: "og:description", content: d },
+        { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
     };
   },
@@ -33,9 +35,10 @@ export const Route = createFileRoute("/work/$slug")({
 
 function ProjectPage() {
   const { slug } = Route.useLoaderData();
-  const p = getProject(slug)!;
+  const p = getProject(slug);
+  if (!p) return null;
   const i = projects.indexOf(p);
-  const next = projects[(i + 1) % projects.length]!;
+  const next = projects[(i + 1) % projects.length];
   const related = p.related ? getProject(p.related) : undefined;
   const filled = p.sections.filter((s) => s.body || s.images?.length);
 
@@ -70,7 +73,7 @@ function ProjectPage() {
       <section className="container-page section-y" aria-labelledby="board-h">
         <div className="flex items-baseline justify-between border-t pt-8">
           <h2 id="board-h" className="display-md">Project presentation</h2>
-          <p className="label-sm">Full board</p>
+          <p className="label-sm">{p.boards.length > 1 ? `${p.boards.length} pages` : "Full board"}</p>
         </div>
         {p.boards.map((b) => (
           <div key={b.src} className="mt-8 bg-surface px-4 py-10">
@@ -87,10 +90,10 @@ function ProjectPage() {
               <p className="display-md mt-2 group-hover:text-primary">{related.title}</p>
             </Link>
           ) : <span />}
-          <Link to="/work/$slug" params={{ slug: next.slug }} className="group block md:text-right">
+          {next && <Link to="/work/$slug" params={{ slug: next.slug }} className="group block md:text-right">
             <p className="label-sm">Next project</p>
             <p className="display-md mt-2 group-hover:text-primary">{next.title} →</p>
-          </Link>
+          </Link>}
         </div>
       </nav>
     </article>
