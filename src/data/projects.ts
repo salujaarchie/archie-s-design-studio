@@ -23,6 +23,16 @@ import fro1 from "@/assets/frodoh-hd-1.webp.asset.json";
 import fro2 from "@/assets/frodoh-hd-2.webp.asset.json";
 import froBoard from "@/assets/frodoh-board-hd.webp.asset.json";
 import keoBoard from "@/assets/keora-board-hd.webp.asset.json";
+import forge01 from "@/assets/frodoh-forge-page-01.webp.asset.json";
+import forge02 from "@/assets/frodoh-forge-page-02.webp.asset.json";
+import forge03 from "@/assets/frodoh-forge-page-03.webp.asset.json";
+import forge04 from "@/assets/frodoh-forge-page-04.webp.asset.json";
+import forge05 from "@/assets/frodoh-forge-page-05.webp.asset.json";
+import forge06 from "@/assets/frodoh-forge-page-06.webp.asset.json";
+import forge07 from "@/assets/frodoh-forge-page-07.webp.asset.json";
+import forge08 from "@/assets/frodoh-forge-page-08.webp.asset.json";
+import forge09 from "@/assets/frodoh-forge-page-09.webp.asset.json";
+import forge10 from "@/assets/frodoh-forge-page-10.webp.asset.json";
 
 export const CATEGORIES = ["UI/UX", "Branding", "Social Media"] as const;
 export type Category = (typeof CATEGORIES)[number];
@@ -53,6 +63,25 @@ export type Project = {
 const crop = (src: string, alt: string): ImageRef => ({ src, alt, width: 690, height: 861 });
 
 export const projects: Project[] = [
+  {
+    id: "frodoh-forge",
+    slug: "frodoh-forge",
+    title: "Frodoh Forge",
+    category: "UI/UX",
+    descriptor: "Product UI redesign",
+    featured: true,
+    summary: "A focused redesign of the campaign planning experience.",
+    cover: { src: forge01.url, alt: "Frodoh Forge campaign planning redesign presented on a laptop", width: 2000, height: 1125 },
+    previews: [{ src: forge10.url, alt: "Frodoh Forge landing page, login and sign up designs", width: 2000, height: 1125 }],
+    boards: [forge01, forge02, forge03, forge04, forge05, forge06, forge07, forge08, forge09, forge10].map((asset, i) => ({
+      src: asset.url,
+      alt: ["Frodoh Forge project introduction", "Connecting product discovery with account access", "Early landing page, sign up and login layouts", "Login redesign and brand consistency", "Login before and after", "Sign up redesign and business context", "Sign up before and after", "Landing page and campaign planning workflow", "Landing page before and after", "Final landing page, login and sign up designs"][i] ?? "Frodoh Forge presentation",
+      width: 2000,
+      height: 1125,
+    })),
+    sections: [],
+    related: "frodoh-website-redesign",
+  },
   {
     id: "numa-brand",
     slug: "numa-brand-identity",
