@@ -1,0 +1,3 @@
+- [ ] Add Frodoh Forge with all supplied presentation pages.
+- [ ] Redesign homepage Selected Work as an asymmetric editorial gallery.
+- [ ] Verify project navigation, images, and narrow-screen layout.
