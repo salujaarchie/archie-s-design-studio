@@ -1,7 +1,7 @@
 import thWeb from "@/assets/numa-web-thumb.webp.asset.json";
 import thKeo from "@/assets/keora-thumb.webp.asset.json";
 import thSem from "@/assets/semiotics-thumb.webp.asset.json";
-import thBrand from "@/assets/numa-brand-thumb.webp.asset.json";
+import thBrand from "@/assets/numa-brand-thumbnail.png.asset.json";
 import thFro from "@/assets/frodoh-thumb.webp.asset.json";
 import brand0 from "@/assets/numa-brand-hd-0.webp.asset.json";
 import brand1 from "@/assets/numa-brand-hd-1.webp.asset.json";
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     category: "Branding",
     featured: true,
     summary: null,
-    cover: { src: thBrand.url, alt: "Numa Calming Chamomile packaging box beside daisies, captioned Designed for mindful rituals", width: 1400, height: 800 },
+    cover: { src: thBrand.url, alt: "Numa Calming Chamomile and Healthy Hibiscus packaging beside tea and chamomile flowers", width: 1024, height: 512 },
     previews: [
       crop(brand1.url, "Numa branded notebook with blue dot pattern"),
       crop(brand2.url, "Numa packaging boxes in blue and pink"),
