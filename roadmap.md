@@ -1,3 +1,4 @@
 - [x] Add Frodoh Forge with all supplied presentation pages.
 - [x] Redesign homepage Selected Work as an asymmetric editorial gallery.
 - [x] Verify project navigation, images, and narrow-screen layout.
+- [x] Replace the Numa branding thumbnail with the newly supplied image.
