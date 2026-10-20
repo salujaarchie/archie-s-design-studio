@@ -7,7 +7,7 @@ https://finn.framer.media/
 
 Use this reference for its bold typographic hierarchy, editorial composition, restrained navigation, and playful cursor interaction. Inspect it if accessible. Adapt the direction to Archie’s identity and work; write original content and use her supplied assets.
 
-Build all page routes and fully develop the homepage first.
+Build all page routes and fully develop the homepage first. Test
 
 VISUAL DIRECTION
 
