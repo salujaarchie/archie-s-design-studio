@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { profile } from "@/data/profile";
 import { btn } from "@/components/ui-button";
+import { assetUrl } from "@/lib/utils";
 
 const TITLE = "Resume | Archie Saluja";
 const DESC = "Resume of Archie Saluja: B.Des Fashion Communication at NIFT Panchkula, with UI/UX, branding and social media experience.";
@@ -56,7 +57,7 @@ function Resume() {
           <p className="mt-4 text-lg font-bold text-primary">UI/UX · Branding · Social Media</p>
           <p className="text-muted-foreground">{profile.location}</p>
         </div>
-        {profile.resumePdf && <a href={profile.resumePdf} download className={btn.primary}>Download full resume</a>}
+        {profile.resumePdf && <a href={assetUrl(profile.resumePdf)} download className={btn.primary}>Download full resume</a>}
       </div>
       <div className="mt-14">
         <Row title="Profile">

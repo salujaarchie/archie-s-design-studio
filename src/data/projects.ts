@@ -34,6 +34,8 @@ import forge08 from "@/assets/frodoh-forge-page-08.webp.asset.json";
 import forge09 from "@/assets/frodoh-forge-page-09.webp.asset.json";
 import forge10 from "@/assets/frodoh-forge-page-10.webp.asset.json";
 
+import { assetUrl } from "@/lib/utils";
+
 export const CATEGORIES = ["UI/UX", "Branding", "Social Media"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
@@ -56,11 +58,14 @@ export type Project = {
   previews: ImageRef[];
   /** Full presentation board(s), shown uncropped. */
   boards: ImageRef[];
+  /** Optional link to high-quality original presentation PDF. */
+  pdf?: string;
   sections: Section[];
   related?: string;
 };
 
-const crop = (src: string, alt: string): ImageRef => ({ src, alt, width: 690, height: 861 });
+const resolveAsset = (fileName: string) => assetUrl(`assets/${fileName}`);
+const crop = (fileName: string, alt: string): ImageRef => ({ src: resolveAsset(fileName), alt, width: 690, height: 861 });
 
 export const projects: Project[] = [
   {
@@ -71,14 +76,15 @@ export const projects: Project[] = [
     descriptor: "Product UI redesign",
     featured: true,
     summary: "A focused redesign of the campaign planning experience.",
-    cover: { src: forge01.url, alt: "Frodoh Forge campaign planning redesign presented on a laptop", width: 2000, height: 1125 },
-    previews: [{ src: forge10.url, alt: "Frodoh Forge landing page, login and sign up designs", width: 2000, height: 1125 }],
+    cover: { src: resolveAsset(forge01.url), alt: "Frodoh Forge campaign planning redesign presented on a laptop", width: 2000, height: 1125 },
+    previews: [{ src: resolveAsset(forge10.url), alt: "Frodoh Forge landing page, login and sign up designs", width: 2000, height: 1125 }],
     boards: [forge01, forge02, forge03, forge04, forge05, forge06, forge07, forge08, forge09, forge10].map((asset, i) => ({
-      src: asset.url,
+      src: resolveAsset(asset.url),
       alt: ["Frodoh Forge project introduction", "Connecting product discovery with account access", "Early landing page, sign up and login layouts", "Login redesign and brand consistency", "Login before and after", "Sign up redesign and business context", "Sign up before and after", "Landing page and campaign planning workflow", "Landing page before and after", "Final landing page, login and sign up designs"][i] ?? "Frodoh Forge presentation",
       width: 2000,
       height: 1125,
     })),
+    pdf: resolveAsset("pdf/frodoh-forge.pdf"),
     sections: [],
     related: "frodoh-website-redesign",
   },
@@ -89,12 +95,20 @@ export const projects: Project[] = [
     category: "Branding",
     featured: true,
     summary: null,
-    cover: { src: thBrand.url, alt: "Numa Calming Chamomile and Healthy Hibiscus packaging beside tea and chamomile flowers", width: 1024, height: 512 },
+    cover: { src: resolveAsset(thBrand.url), alt: "Numa Calming Chamomile and Healthy Hibiscus packaging beside tea and chamomile flowers", width: 1024, height: 512 },
     previews: [
       crop(brand1.url, "Numa branded notebook with blue dot pattern"),
       crop(brand2.url, "Numa packaging boxes in blue and pink"),
     ],
-    boards: [{ src: brandBoard.url, alt: "Full Numa brand identity presentation: logo, colours, stationery, packaging and business cards", width: 1201, height: 10009 }],
+    boards: [{ src: resolveAsset(brandBoard.url), alt: "Numa brand presentation overview", width: 1200, height: 10001 }].concat(
+      [1, 2, 3, 4, 5].map((num) => ({
+        src: resolveAsset(`slices/numa-branding-slice-0${num}.webp`),
+        alt: `Numa brand presentation part ${num}`,
+        width: 2400,
+        height: 4000,
+      }))
+    ).slice(1),
+    pdf: resolveAsset("pdf/numa-branding.pdf"),
     sections: [
       { heading: "Brief", body: null },
       { heading: "Concept", body: null },
@@ -110,12 +124,18 @@ export const projects: Project[] = [
     category: "UI/UX",
     featured: true,
     summary: null,
-    cover: { src: thWeb.url, alt: "Numa website homepage shown on a laptop: Breathe. Reflect. Reset.", width: 1397, height: 941 },
+    cover: { src: resolveAsset(thWeb.url), alt: "Numa website homepage shown on a laptop: Breathe. Reflect. Reset.", width: 1397, height: 941 },
     previews: [
       crop(web1.url, "Numa research and card-sorting boards"),
       crop(web2.url, "Numa website shown on a laptop"),
     ],
-    boards: [{ src: webBoard.url, alt: "Full Numa website case study: research, card sorting, wireframes and final screens", width: 1201, height: 10914 }],
+    boards: [1, 2, 3, 4, 5].map((num) => ({
+      src: resolveAsset(`slices/numa-ui-ux-slice-0${num}.webp`),
+      alt: `Numa UI/UX case study part ${num}`,
+      width: 2400,
+      height: 4364,
+    })),
+    pdf: resolveAsset("pdf/numa-ui-ux.pdf"),
     sections: [
       { heading: "Problem", body: null },
       { heading: "Role", body: null },
@@ -135,12 +155,18 @@ export const projects: Project[] = [
     descriptor: "Academic / Semiotics",
     featured: true,
     summary: null,
-    cover: { src: thSem.url, alt: "Warli Exhibition 2025 tickets set in the Warli-inspired typeface", width: 1393, height: 927 },
+    cover: { src: resolveAsset(thSem.url), alt: "Warli Exhibition 2025 tickets set in the Warli-inspired typeface", width: 1393, height: 927 },
     previews: [
       crop(sem1.url, "Warli-inspired letterforms drawn on a grid"),
       crop(sem2.url, "Warli Verse typeface applied to an art museum poster"),
     ],
-    boards: [{ src: semBoard.url, alt: "Full Warli Verse presentation: inspiration, typeface references, letter exploration and deliverables", width: 1200, height: 10590 }],
+    boards: [1, 2, 3, 4, 5].map((num) => ({
+      src: resolveAsset(`slices/typography-warli-slice-0${num}.webp`),
+      alt: `Warli Verse typography presentation part ${num}`,
+      width: 2400,
+      height: 4236,
+    })),
+    pdf: resolveAsset("pdf/typography-warli.pdf"),
     sections: [
       { heading: "Brief", body: null },
       { heading: "Concept", body: null },
@@ -155,12 +181,18 @@ export const projects: Project[] = [
     category: "UI/UX",
     featured: false,
     summary: null,
-    cover: { src: thFro.url, alt: "Reimagining Frodoh: website redesign cover with the new homepage shown on a laptop", width: 1672, height: 941 },
+    cover: { src: resolveAsset(thFro.url), alt: "Reimagining Frodoh: website redesign cover with the new homepage shown on a laptop", width: 1672, height: 941 },
     previews: [
       crop(fro1.url, "Frodoh website redesign process board"),
       crop(fro2.url, "Frodoh redesigned website screens"),
     ],
-    boards: [{ src: froBoard.url, alt: "Full Frodoh website redesign case study: visual audit, competitive landscape, process and final screens", width: 1201, height: 10170 }],
+    boards: [1, 2, 3, 4, 5].map((num) => ({
+      src: resolveAsset(`slices/frodoh-website-slice-0${num}.webp`),
+      alt: `Frodoh website redesign case study part ${num}`,
+      width: 2400,
+      height: 4064,
+    })),
+    pdf: resolveAsset("pdf/frodoh-website.pdf"),
     sections: [
       { heading: "Problem", body: null },
       { heading: "Role", body: null },
@@ -176,12 +208,18 @@ export const projects: Project[] = [
     descriptor: "Editorial / Magazine",
     featured: false,
     summary: null,
-    cover: { src: thKeo.url, alt: "Keora magazine cover featuring Park Hyung Sik", width: 1398, height: 842 },
+    cover: { src: resolveAsset(thKeo.url), alt: "Keora magazine cover featuring Park Hyung Sik", width: 1398, height: 842 },
     previews: [
       crop(keo1.url, "Keora typography system and magazine cover mockup"),
       crop(keo2.url, "Keora magazine inner spreads with fashion features"),
     ],
-    boards: [{ src: keoBoard.url, alt: "Full Keora magazine presentation: theme, references, layout explorations, fonts, cover and spreads", width: 1201, height: 7219 }],
+    boards: [1, 2, 3, 4].map((num) => ({
+      src: resolveAsset(`slices/keora-magazine-slice-0${num}.webp`),
+      alt: `Keora magazine presentation part ${num}`,
+      width: 2400,
+      height: 3607,
+    })),
+    pdf: resolveAsset("pdf/keora-magazine.pdf"),
     sections: [
       { heading: "Brief", body: null },
       { heading: "Concept", body: null },

@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useState } from "react";
+import { Maximize2, X, Download, FileText } from "lucide-react";
 import { getProject, projects } from "@/data/projects";
 
 export const Route = createFileRoute("/work/$slug")({
@@ -35,6 +37,7 @@ export const Route = createFileRoute("/work/$slug")({
 
 function ProjectPage() {
   const { slug } = Route.useLoaderData();
+  const [showPdfModal, setShowPdfModal] = useState(false);
   const p = getProject(slug);
   if (!p) return null;
   const i = projects.indexOf(p);
@@ -71,16 +74,107 @@ function ProjectPage() {
       )}
 
       <section className="container-page section-y" aria-labelledby="board-h">
-        <div className="flex items-baseline justify-between border-t pt-8">
-          <h2 id="board-h" className="display-md">Project presentation</h2>
-          <p className="label-sm">{p.boards.length > 1 ? `${p.boards.length} pages` : "Full board"}</p>
-        </div>
-        {p.boards.map((b) => (
-          <div key={b.src} className="mt-8 bg-surface px-4 py-10">
-            <img src={b.src} alt={b.alt} width={b.width} height={b.height} loading="lazy" decoding="async" className="mx-auto h-auto w-full max-w-[1000px]" />
+        <div className="flex flex-wrap items-baseline justify-between gap-4 border-t pt-8">
+          <div>
+            <h2 id="board-h" className="display-md">Project presentation</h2>
+            <p className="label-sm mt-1">{p.boards.length > 1 ? `${p.boards.length} sections · 2x Retina` : "Full board"}</p>
           </div>
-        ))}
+          {p.pdf && (
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setShowPdfModal(true)}
+                className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                <Maximize2 className="h-4 w-4" /> Open Full Vector PDF
+              </button>
+              <a
+                href={p.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                className="inline-flex min-h-11 items-center gap-2 rounded-sm border border-foreground px-4 py-2 text-sm font-bold text-foreground transition-colors hover:bg-foreground hover:text-background"
+              >
+                <Download className="h-4 w-4" /> Download PDF
+              </a>
+            </div>
+          )}
+        </div>
+
+        {/* High-DPI continuous board presentation */}
+        <div className="mt-8 overflow-hidden rounded-sm bg-surface shadow-sm">
+          {p.boards.map((b, idx) => (
+            <div key={b.src} className="relative w-full">
+              <img
+                src={b.src}
+                alt={b.alt}
+                width={b.width}
+                height={b.height}
+                loading={idx === 0 ? "eager" : "lazy"}
+                decoding="async"
+                className="mx-auto block h-auto w-full max-w-[1000px]"
+              />
+            </div>
+          ))}
+        </div>
       </section>
+
+      {/* Vector PDF Modal */}
+      {showPdfModal && p.pdf && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex flex-col bg-background/95 backdrop-blur-md"
+        >
+          <div className="flex items-center justify-between border-b px-6 py-4">
+            <div className="flex items-center gap-3">
+              <FileText className="h-5 w-5 text-primary" />
+              <div>
+                <h3 className="font-bold text-foreground">{p.title} — Vector PDF</h3>
+                <p className="text-xs text-muted-foreground">Original vector file · Zoom & inspect freely</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <a
+                href={p.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                className="inline-flex items-center gap-1.5 rounded-sm border px-3 py-1.5 text-xs font-semibold hover:bg-accent"
+              >
+                <Download className="h-3.5 w-3.5" /> Download
+              </a>
+              <button
+                type="button"
+                onClick={() => setShowPdfModal(false)}
+                className="inline-flex items-center justify-center rounded-sm p-1.5 text-muted-foreground hover:bg-accent hover:text-foreground"
+                aria-label="Close PDF Viewer"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+          <div className="flex-1 bg-neutral-900 p-2 md:p-6">
+            <object
+              data={p.pdf}
+              type="application/pdf"
+              className="h-full w-full rounded border border-neutral-700 bg-white"
+            >
+              <div className="flex h-full flex-col items-center justify-center gap-4 text-center text-white p-6">
+                <p>Your browser could not preview the PDF inline.</p>
+                <a
+                  href={p.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded bg-primary px-4 py-2 font-bold text-primary-foreground"
+                >
+                  Open PDF in new tab ↗
+                </a>
+              </div>
+            </object>
+          </div>
+        </div>
+      )}
 
       <nav aria-label="More projects" className="border-t">
         <div className="container-page grid gap-8 py-12 md:grid-cols-2">

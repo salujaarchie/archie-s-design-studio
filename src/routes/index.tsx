@@ -6,6 +6,7 @@ import { ProjectCard } from "@/components/project-card";
 import { Asterisk, ButtonLink, btn } from "@/components/ui-button";
 import { ChapterArt, Doodle, Marquee, Reveal, Sticker } from "@/components/story";
 import portrait from "@/assets/archie-portrait.webp.asset.json";
+import { assetUrl } from "@/lib/utils";
 
 const CHAPTERS = [
   { n: "01", t: "Notice", d: "Every project starts with looking closely: at people, references, and the problem behind the brief." },
@@ -140,7 +141,7 @@ function Home() {
           <div className="relative mx-auto w-full max-w-[360px] md:col-span-4">
             <div className="portrait-card relative">
               <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rotate-3 bg-primary" />
-              <img src={portrait.url} alt="Portrait of Archie Saluja" width={900} height={1200} loading="lazy" className="relative aspect-[3/4] w-full border-4 border-background object-cover" />
+              <img src={assetUrl(`assets/${portrait.url}`)} alt="Portrait of Archie Saluja" width={900} height={1200} loading="lazy" className="relative aspect-[3/4] w-full border-4 border-background object-cover" />
               <span className="wiggle absolute -left-4 top-6 rounded-full bg-highlight px-4 py-1.5 text-sm font-extrabold text-highlight-foreground shadow-sm">Hi! 👋</span>
             </div>
             <Sticker text="Curious · Creative · Archie · " className="absolute -bottom-10 -right-6 h-24 w-24" />
